@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Product>
+
+<h2>Here's a menu of the many delicious products we currently offer at <i>Detroit Buzz!</i></h2>
+<p>Click on any item you're interested in for a more detailed description!</p>
+<br>
+@foreach(Product p in Model)
+{
+    <div>
+            <p><b>Product @p.Id:</b> <a asp-action="ProductDetailView" asp-route-Name= "@p.Name" asp-controller="Home">@p.Name</a>, Price: $@p.Price</p>
+        <br>
+        <br>
+        <br>
+    </div>
+
+}
